@@ -1,0 +1,62 @@
+<!--
+<div class="forme">
+  <div class="skills">
+    <div class="block8">
+      <div class="sq">
+        <img class="photo" src="assets/skill.png">
+      </div>
+      <p>SKILLS</p>
+    </div>
+    <div class="line"></div>
+    <div id="skills">
+
+    </div>
+  </div>
+  <div class="hobby">
+    <div class="block8">
+      <div class="sq">
+        <img class="photo" src="assets/flag.png">
+      </div>
+      <p>HOBBIES</p>
+    </div>
+    <div class="line"></div>
+    <div id="hobbies"></div>
+  </div>
+</div>
+-->
+
+<div class="forme">
+  <form class="skills" *ngIf="showSkills">
+    <div class="block8">
+      <div class="sq">
+        <img class="photo" src="assets/skill.png">
+      </div>
+      <p>SKILLS</p>
+    </div>
+    <div class="line"></div>
+    <div id="skills">
+      <div *ngFor="let lang of skills" class="block">
+        <div class="sq"></div>
+        <div class="text">{{lang.name}}</div>
+        <div class="line1"></div>
+    </div>
+    </div>
+  </form>
+<!--  <button type="button" class="b" (click)="toggleTab()"><div class="text">Toggle Skills / Hobbies<</div></button>-->
+  <div class="hobby"> <!--*ngIf="!showSkills"-->
+    <div class="block8">
+      <div class="sq">
+        <img class="photo" src="assets/flag.png">
+      </div>
+      <p>HOBBIES</p>
+    </div>
+    <div class="line"></div>
+    <div id="hobbies">
+      <div *ngFor="let lang of hobbies" class="block">
+        <div class="sq"></div>
+        <div class="text">{{lang.name}}</div>
+        <div class="line1"></div>
+    </div>
+    </div>
+  </div>
+</div>

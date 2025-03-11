@@ -1,0 +1,120 @@
+<div class="main">
+  <div class="h">
+    <div class="block">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <a>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</a>
+    </div>
+    <button routerLink="/registration" class="nav-button"><img class="other" src="assets/go.png"></button>
+  </div>
+  <div class="content">
+    <div class="yblock">
+      <div class="text">
+        <p>BRIAN D. PATERSON</p>
+        <a>Graphic & Web Designer</a>
+      </div>
+    </div>
+    <div class="connect">
+      <div class="block1">
+        <div class="sq">
+          <img class="photo" src="assets/phone.png">
+        </div>
+        <p href="#">+1-718-310-5588</p>
+      </div>
+      <div class="line"></div>
+      <div class="block1">
+        <div class="sq">
+          <img class="photo" src="assets/site.png">
+        </div>
+        <p href="#">www.yourwebsite.com</p>
+      </div>
+      <div class="line"></div>
+      <div class="block1">
+        <div class="sq">
+          <img class="photo" src="assets/dot.png">
+        </div>
+        <p href="#">769 Prudence Street Lincoln Park, MI 48146</p>
+      </div>
+      <div class="line"></div>
+    </div>
+
+  </div>
+  <div class="vertical">
+    <div class="photo">
+    </div>
+    <div class="educ">
+      <div class="block2">
+        <div class="sq">
+          <img class="photo" src="assets/educ.png">
+        </div>
+        <p>EDUCATION</p>
+      </div>
+      <div class="line"></div>
+      <div class="info">
+        <div class="block3">
+          <div class="year">
+            <p>2011-2023</p>
+          </div>
+          <div class="more">
+            <div class="p1">Stanford University</div>
+            <p>MASTER DEGREE</p>
+            <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+          </div>
+        </div>
+        <div class="block3">
+          <div class="year">
+            <p>2007-2010</p>
+          </div>
+          <div class="more">
+            <div class="p1">Chicago University</div>
+            <p>BACHELOR DEGREE</p>
+            <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ref">
+      <div class="block4">
+        <div class="sq">
+          <img class="photo" src="assets/people.png">
+        </div>
+        <p>REFERENCES</p>
+      </div>
+      <div class="line"></div>
+      <div class="info">
+        <div class="block5">
+          <div class="p1">DARWIN D. MAGANA</div>
+          <p>2813 Shode Lane Mancos, CO.</p>
+          <div class="p3">Tel: +1-970-533-3393</div>
+          <a>Email: www.yourwebsite.com</a>
+        </div>
+        <div class="block5">
+          <div class="p1">ROBERT J. BELVIN</div>
+          <p>2119 Falrfax Drive Newark, NJ.</p>
+          <div class="p3">Tel: +1-908-987-5103</div>
+          <a>Email: www.yourwebsite.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="lang">
+      <div class="block6">
+        <div class="sq">
+          <img class="photo" src="assets/lang.png">
+        </div>
+        <p>LANGUAGES</p>
+      </div>
+      <div class="line"></div>
+      <!-- <button (click)="toggleLanguages()">Show languages</button>-->
+      <div class="languages">
+        <div *ngFor="let lang of languages" class="block">
+          <div class="sq"></div>
+          <div class="text">{{lang.name}}</div>
+          <div class="line1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-head></app-head>
+  <app-main></app-main>
+</div>
+
+

@@ -1,0 +1,45 @@
+<div class="main">
+  <div class="block">
+    <p>Welcome to My Site!</p>
+    <div class="form-container">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="signup">
+        <input type="radio" name="slide" id="login" checked>
+        <label for="signup" class="slide signup" (click)="toggleLoginView()">Sign up</label>
+        <label for="login" class="slide login" (click)="toggleLoginView()">Log in</label>
+        <div class="slider-tab"></div>
+      </div>
+    </div>
+    <form *ngIf="isRegistration" [formGroup]="registrationForm" class="container">
+      <div class="data">
+        <input formControlName="email" class="input-data" type="text" placeholder="Email">
+       <!-- <span *ngIf="registrationForm.hasError('required', 'email') && registrationForm.controls['email'].dirty" class="requir">*Email is required</span>-->
+      </div>
+      <div class="data1">
+        <input formControlName="password" class="input-data" type="text" placeholder="Password">
+       <!-- <span *ngIf="registrationForm.hasError('required', 'password') && registrationForm.controls['password'].dirty" class="requir">*Password is required</span>-->
+      </div>
+      <button routerLink="/home" class="log-in">{{isRegistration ? 'Log in' : 'Sign Up'}}</button>
+    </form>
+    <form *ngIf="!isRegistration" [formGroup]="registrationForm" class="container">
+      <div class="data3">
+        <input formControlName="email" class="input-data" type="text" placeholder="Email">
+       <!-- <span *ngIf="registrationForm.hasError('required', 'email') && registrationForm.controls['email'].dirty" class="requir">*Email is required</span>-->
+      </div>
+      <div class="data4">
+        <input formControlName="password" class="input-data" type="text" placeholder="Password">
+       <!-- <span *ngIf="registrationForm.hasError('required', 'password') && registrationForm.controls['password'].dirty" class="requir">*Password is required</span>-->
+      </div>
+      <div *ngIf="!isRegistration" class="data2">
+        <input formControlName="nickname" class="input-data" type="text" placeholder="Nickname">
+       <!-- <span *ngIf="registrationForm.hasError('required', 'nickname') && registrationForm.controls['nickname'].dirty" class="requir">*Nickname is required</span>-->
+      </div>
+      <button routerLink="/home" class="log-in">{{isRegistration ? 'Log in' : 'Sign Up'}}</button>
+    </form>
+    <div *ngIf="isRegistration" class="forgot">
+      <a>Forgot password?</a>
+    </div>
+  </div>
+</div>
+
+
