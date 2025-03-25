@@ -6,9 +6,10 @@ import { importProvidersFrom } from '@angular/core';
 import {HomeComponent} from "./app/home/home.component";
 import {RegistrationComponent} from "./app/registration/registration.component";
 import { HttpClientModule } from '@angular/common/http';
-
+import { provideHttpClient } from '@angular/common/http';
 bootstrapApplication(AppComponent, {
   providers: [
+    provideHttpClient(),
     provideRouter([
       { path: '', component: HomeComponent }, // Головна сторінка
       { path: 'registration', component: RegistrationComponent } // Сторінка "Про нас"

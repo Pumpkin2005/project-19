@@ -19,11 +19,11 @@
         <input formControlName="password" class="input-data" type="text" placeholder="Password">
         <span *ngIf="registrationForm.hasError('required', 'password') && registrationForm.controls['password'].dirty" class="requir">*Password is required</span>
       </div>
-      <button routerLink="home" (click)="login()" class="log-in">{{isRegistration ? 'Log in' : 'Sign Up'}}</button>
+      <button routerLink="/home" (click)="login()" class="log-in">{{isRegistration ? 'Log in' : 'Sign Up'}}</button>
     </form>
     <form *ngIf="!isRegistration" [formGroup]="registrationForm" class="container">
       <div class="data3">
-        <input formControlName="email" class="input-data" type="text" placeholder="Email">
+        <input formControlName="email" [(ngModel)]="user.email" class="input-data" type="text" placeholder="Email"  required />
         <span *ngIf="registrationForm.hasError('required', 'email') && registrationForm.controls['email'].dirty" class="requir">*Email is required</span>
       </div>
       <div class="data4">
@@ -31,10 +31,10 @@
         <span *ngIf="registrationForm.hasError('required', 'password') && registrationForm.controls['password'].dirty" class="requir">*Password is required</span>
       </div>
       <div *ngIf="!isRegistration" class="data2">
-        <input formControlName="nickname" class="input-data" type="text" placeholder="Nickname">
+        <input formControlName="nickname" [(ngModel)]="user.nickname"  class="input-data" type="text" placeholder="Nickname"  required />
         <span *ngIf="registrationForm.hasError('required', 'nickname') && registrationForm.controls['nickname'].dirty" class="requir">*Nickname is required</span>
       </div>
-      <button routerLink="home" (click)="login()" class="log-in">{{isRegistration ? 'Log in' : 'Sign Up'}}</button>
+      <button routerLink="/home" (click)="login()" class="log-in">{{isRegistration ? 'Log in' : 'Sign Up'}}</button>
     </form>
     <div *ngIf="isRegistration" class="forgot">
       <a>Forgot password?</a>

@@ -13,9 +13,16 @@ import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
   styleUrl: './registration.component.scss'
 })
 export class RegistrationComponent implements OnInit{
+  user = {
+    nickname: '',
+    email: '',
+  };
   fb = inject(FormBuilder);
   registrationForm !: FormGroup;
   isRegistration: boolean = true;
+  users: any[] = [];
+
+  constructor(private apiService: ApiService) {}
   public Registration: any[] = [
     {
       password: "Password",
@@ -35,7 +42,26 @@ export class RegistrationComponent implements OnInit{
       password:['',Validators.required],
       nickname:['',Validators.required]
     })
-
+    this.apiService.getUsers().subscribe({
+      next: (data) => {
+        this.users = data;
+      },
+      error: (err) => {
+        console.error('Error when receiving data', err);
+      },
+    });
+  }
+  registerUser() {
+    this.apiService.postUser(this.user).subscribe({
+      next: (response) => {
+        alert('User successfully registered!');
+        console.log(response);
+      },
+      error: (error) => {
+        alert('Registration error!');
+        console.error(error);
+      },
+    });
   }
   reset() {
     // Reset errors for all form controls
@@ -49,13 +75,4 @@ export class RegistrationComponent implements OnInit{
   }
   data: any;
 
-  constructor(private apiService: ApiService) {}
-
- /* sendData() {
-    const newItem = {name: 'Новий елемент', description: 'Опис елементу'};
-    this.apiService.postData('items', newItem).subscribe({
-      next: (res) => console.log('Дані успішно надіслані:', res),
-      error: (err) => console.error('Помилка надсилання даних:', err)
-    });
-  }*/
 }
